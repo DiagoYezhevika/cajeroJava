@@ -12,5 +12,29 @@ public class transaccion {
     int idTipo;
     String descripcion;
     
+    transaccion(){
+        idTipo = 0;
+        descripcion = "";
+    }
     
+    transaccion(int nuevoIdTipo, String nuevaDescripcion){
+        idTipo = nuevoIdTipo;
+        descripcion = nuevaDescripcion;
+    }
+    
+    int getIdTipo(){
+        return idTipo;
+    }
+    
+    String getDescripcion(){
+        return descripcion;
+    }
+    
+    void setIdTipo(int nuevoIdTipo){
+        idTipo = nuevoIdTipo;
+    }
+    
+    void setDescripcion(String nuevaDescripcion){
+        descripcion = nuevaDescripcion;
+    }
 }

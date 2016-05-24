@@ -18,8 +18,8 @@ public class tarjeta {
     }
     
     tarjeta(int nuevoId, String nuevaDescripcion){
-        idTarjeta = 0;
-        descripcion = "";
+        idTarjeta = nuevoId;
+        descripcion = nuevaDescripcion;
     }
     
     int getId(){
