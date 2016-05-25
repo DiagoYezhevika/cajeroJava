@@ -38,10 +38,22 @@ public class vistaCajero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFrame1 = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -112,6 +124,7 @@ public class vistaCajero extends javax.swing.JFrame {
         tiposTransaccion.add(new transaccion(2, "Consulta De Saldo"));
         tiposTransaccion.add(new transaccion(3, "Consignación"));
         tiposTransaccion.add(new transaccion(4, "Transferencia"));
+        tiposTransaccion.add(new transaccion(5, "Movimientos"));
         
         tiposCuenta.add(new tipoCuenta(1, "Ahorros"));
         tiposCuenta.add(new tipoCuenta(2, "Corriente"));
@@ -124,6 +137,8 @@ public class vistaCajero extends javax.swing.JFrame {
         cuentas.add(new cuenta(2, 1, 2, 1500000, 1234));
         cuentas.add(new cuenta(3, 2, 3, 5200000, 1234));
         cuentas.add(new cuenta(4, 2, 1, 50000, 1234));
+        
+        jFrame1.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -164,6 +179,7 @@ public class vistaCajero extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
