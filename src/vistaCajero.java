@@ -8,11 +8,23 @@
  *
  * @author undine
  */
-public class vistaCajero extends javax.swing.JFrame {
+import java.util.*;
+import javax.swing.table.DefaultTableModel;
 
+public class vistaCajero extends javax.swing.JFrame {
+    
+    GregorianCalendar getFecha = new GregorianCalendar();
+    ArrayList<tarjeta> tarjetas = new ArrayList<tarjeta>();
+    ArrayList<cuentaTransaccion> transacciones = new ArrayList<cuentaTransaccion>();
+    ArrayList<cuenta> cuentas = new ArrayList<cuenta>();
+    ArrayList<tipoCuenta> tiposCuenta = new ArrayList<tipoCuenta>();
+    ArrayList<transaccion> tiposTransaccion = new ArrayList<>();
+    String[] columnaTransaccion = {"","","","",""};
+    int numTarjeta = 0;
     /**
      * Creates new form vistaCajero
      */
+    
     public vistaCajero() {
         initComponents();
     }
@@ -26,21 +38,93 @@ public class vistaCajero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Bienvenido Por Favor Inserte Su Tarjeta");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Continuar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jButton1)
+                        .addGap(86, 86, 86)
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jLabel1)
+                .addGap(30, 30, 30)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        numTarjeta = Integer.parseInt(jTextField1.getText());
+        
+        tiposTransaccion.add(new transaccion(1, "Retiro"));
+        tiposTransaccion.add(new transaccion(2, "Consulta De Saldo"));
+        tiposTransaccion.add(new transaccion(3, "Consignación"));
+        tiposTransaccion.add(new transaccion(4, "Transferencia"));
+        
+        tiposCuenta.add(new tipoCuenta(1, "Ahorros"));
+        tiposCuenta.add(new tipoCuenta(2, "Corriente"));
+        
+        tarjetas.add(new tarjeta(1, "Visa"));
+        tarjetas.add(new tarjeta(1, "Mastercard"));
+        tarjetas.add(new tarjeta(1, "Maestro"));
+        
+        cuentas.add(new cuenta(1, 1, 1, 500000, 1234));
+        cuentas.add(new cuenta(2, 1, 2, 1500000, 1234));
+        cuentas.add(new cuenta(3, 2, 3, 5200000, 1234));
+        cuentas.add(new cuenta(4, 2, 1, 50000, 1234));
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +162,9 @@ public class vistaCajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

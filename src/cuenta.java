@@ -13,6 +13,7 @@ public class cuenta {
     int idTipoCuenta;
     int idTarjeta;
     int saldo;
+    int clave;
     
     cuenta(){
         
@@ -20,14 +21,16 @@ public class cuenta {
         idTipoCuenta = 0;
         idTarjeta = 0;
         saldo = 0;
+        clave = 0;
     }
     
-    cuenta(int nuevoIdCuenta, int nuevoIdTipoCuenta, int nuevoIdtarjeta, int nuevoSaldo){
+    cuenta(int nuevoIdCuenta, int nuevoIdTipoCuenta, int nuevoIdtarjeta, int nuevoSaldo, int nuevoClave){
         
         idCuenta = nuevoIdCuenta;
         idTipoCuenta = nuevoIdTipoCuenta;
         idTarjeta = nuevoIdtarjeta;
         saldo = nuevoSaldo;
+        clave = nuevoClave;
     }
     
     int getIdCuenta(){        
@@ -46,6 +49,10 @@ public class cuenta {
         return saldo;
     }
     
+     int getClave(){
+        return clave;
+    }
+    
     void setIdCuenta(int nuevoIdCuenta){
         idCuenta = nuevoIdCuenta;
     }
@@ -60,5 +67,9 @@ public class cuenta {
     
     void setSaldo(int nuevoSaldo){
         saldo = nuevoSaldo;
+    }
+    
+    void setClave(int nuevoClave){
+        clave = nuevoClave;
     }
 }
