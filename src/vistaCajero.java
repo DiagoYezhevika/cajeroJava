@@ -70,13 +70,17 @@ public class vistaCajero extends javax.swing.JFrame {
         fondosInsuficientes = new javax.swing.JFrame();
         jLabel5 = new javax.swing.JLabel();
         jButton14 = new javax.swing.JButton();
+        reporteTransaccion = new javax.swing.JFrame();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel6 = new javax.swing.JLabel();
+        jButton15 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         jFrame1.setBounds(new java.awt.Rectangle(0, 0, 460, 460));
-        jFrame1.setPreferredSize(new java.awt.Dimension(427, 308));
 
         jButton3.setText("Ahorros");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +194,7 @@ public class vistaCajero extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setText("Digite El Valor A Retirar");
+        jLabel2.setText("Digite El Valor");
 
         jButton11.setText("Continuar");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -204,17 +208,17 @@ public class vistaCajero extends javax.swing.JFrame {
         jFrame3Layout.setHorizontalGroup(
             jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jFrame3Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
                 .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame3Layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame3Layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(113, Short.MAX_VALUE))
+                    .addGroup(jFrame3Layout.createSequentialGroup()
+                        .addGap(135, 135, 135)
+                        .addComponent(jLabel2))
+                    .addGroup(jFrame3Layout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jFrame3Layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(146, Short.MAX_VALUE))
         );
         jFrame3Layout.setVerticalGroup(
             jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,9 +227,9 @@ public class vistaCajero extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -332,6 +336,50 @@ public class vistaCajero extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(147, Short.MAX_VALUE))
+        );
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel6.setText("Transaccion Exitosa");
+
+        jButton15.setText("Salir");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout reporteTransaccionLayout = new javax.swing.GroupLayout(reporteTransaccion.getContentPane());
+        reporteTransaccion.getContentPane().setLayout(reporteTransaccionLayout);
+        reporteTransaccionLayout.setHorizontalGroup(
+            reporteTransaccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(reporteTransaccionLayout.createSequentialGroup()
+                .addGroup(reporteTransaccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(reporteTransaccionLayout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(reporteTransaccionLayout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(jLabel6))
+                    .addGroup(reporteTransaccionLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        reporteTransaccionLayout.setVerticalGroup(
+            reporteTransaccionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(reporteTransaccionLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -459,11 +507,19 @@ public class vistaCajero extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         tipoTransaccion = 2;
+        jFrame2.setVisible(false);
+        valorRetiro = 0;
+        jFrame4.setVisible(true);
+        jFrame4.setBounds(0, 0, 460, 430);
+        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         tipoTransaccion = 3;
+        jFrame2.setVisible(false);
+        jFrame3.setVisible(true);
+        jFrame3.setBounds(0, 0, 460, 430);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -516,12 +572,19 @@ public class vistaCajero extends javax.swing.JFrame {
                     nuevoSaldo = cuentas.get(j).getSaldo() - valorRetiro;
                     cuentas.get(j).setSaldo(nuevoSaldo);
                     System.out.println(cuentas.get(j).getSaldo());
-                    transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));   
+                    transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
+                    j = cuentas.size();
+                    jFrame4.setVisible(false);
+                    reporteTransaccion.setBounds(0, 0, 460, 430);
+                    reporteTransaccion.setVisible(true);
+                    cadena = generarRecibo(valorRetiro,nuevoSaldo,numTarjeta,numTransaccion);
+                    jTextArea1.setText(cadena);
                 }else{
                     //Saldo insuficiente
                     jFrame4.setVisible(false);
                     fondosInsuficientes.setBounds(0, 0, 460, 430);
                     fondosInsuficientes.setVisible(true);
+                    j = cuentas.size();
                 }
             }else{
                 //Clave invalida
@@ -543,6 +606,12 @@ public class vistaCajero extends javax.swing.JFrame {
         fondosInsuficientes.setVisible(false);
         jTextField1.setText(null);
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        reporteTransaccion.setVisible(false);
+        jTextField1.setText(null);
+    }//GEN-LAST:event_jButton15ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -588,6 +657,7 @@ public class vistaCajero extends javax.swing.JFrame {
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -605,8 +675,23 @@ public class vistaCajero extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JFrame reporteTransaccion;
     // End of variables declaration//GEN-END:variables
+
+    String generarRecibo(int valorTransaccion, int nuevoSaldo, int numTarjeta,int numTransaccion ){
+        String cadena = "";
+        GregorianCalendar getFecha = new GregorianCalendar();
+        GregorianCalendar getHora = new GregorianCalendar();
+        
+        cadena = "Fecha: " + getFecha.get(Calendar.DATE) + "/" + getFecha.get(Calendar.MONTH) + "/" + getFecha.get(Calendar.YEAR) + "\n";
+        cadena = cadena + "Hora: " + getFecha.get(Calendar.HOUR) + ":" + getFecha.get(Calendar.MINUTE) + ":" + getFecha.get(Calendar.SECOND) + "\n";
+        cadena = cadena + "Numero de transaccion: " + numTransaccion + "\n" + "Numero de cuenta: " + numTarjeta + "\n" + "Valor de la transaccion: " + valorTransaccion + "\n" + "Nuevo saldo: " + nuevoSaldo;
+        return cadena;
+    }
 }
