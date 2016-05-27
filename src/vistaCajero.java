@@ -29,6 +29,7 @@ public class vistaCajero extends javax.swing.JFrame {
     int valorRetiro = 0;
     int valorDeposito = 0;
     int numTransaccion = 0;
+    int cuentaTransferencia = 0;
     /**
      * Creates new form vistaCajero
      */
@@ -46,21 +47,21 @@ public class vistaCajero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
+        ahorrosCorriente = new javax.swing.JFrame();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
-        jFrame2 = new javax.swing.JFrame();
+        formTransacciones = new javax.swing.JFrame();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jFrame3 = new javax.swing.JFrame();
+        formValor = new javax.swing.JFrame();
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton11 = new javax.swing.JButton();
-        jFrame4 = new javax.swing.JFrame();
+        digiteClave = new javax.swing.JFrame();
         jLabel3 = new javax.swing.JLabel();
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton12 = new javax.swing.JButton();
@@ -75,12 +76,16 @@ public class vistaCajero extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         jButton15 = new javax.swing.JButton();
+        cuentaDestino = new javax.swing.JFrame();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jButton16 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        jFrame1.setBounds(new java.awt.Rectangle(0, 0, 460, 460));
+        ahorrosCorriente.setBounds(new java.awt.Rectangle(0, 0, 460, 460));
 
         jButton3.setText("Ahorros");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -103,21 +108,21 @@ public class vistaCajero extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createSequentialGroup()
+        javax.swing.GroupLayout ahorrosCorrienteLayout = new javax.swing.GroupLayout(ahorrosCorriente.getContentPane());
+        ahorrosCorriente.getContentPane().setLayout(ahorrosCorrienteLayout);
+        ahorrosCorrienteLayout.setHorizontalGroup(
+            ahorrosCorrienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ahorrosCorrienteLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(ahorrosCorrienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame1Layout.createSequentialGroup()
+        ahorrosCorrienteLayout.setVerticalGroup(
+            ahorrosCorrienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ahorrosCorrienteLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -162,13 +167,13 @@ public class vistaCajero extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jFrame2Layout = new javax.swing.GroupLayout(jFrame2.getContentPane());
-        jFrame2.getContentPane().setLayout(jFrame2Layout);
-        jFrame2Layout.setHorizontalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame2Layout.createSequentialGroup()
+        javax.swing.GroupLayout formTransaccionesLayout = new javax.swing.GroupLayout(formTransacciones.getContentPane());
+        formTransacciones.getContentPane().setLayout(formTransaccionesLayout);
+        formTransaccionesLayout.setHorizontalGroup(
+            formTransaccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formTransaccionesLayout.createSequentialGroup()
                 .addGap(105, 105, 105)
-                .addGroup(jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(formTransaccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -176,9 +181,9 @@ public class vistaCajero extends javax.swing.JFrame {
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(115, Short.MAX_VALUE))
         );
-        jFrame2Layout.setVerticalGroup(
-            jFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame2Layout.createSequentialGroup()
+        formTransaccionesLayout.setVerticalGroup(
+            formTransaccionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formTransaccionesLayout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -203,26 +208,26 @@ public class vistaCajero extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jFrame3Layout = new javax.swing.GroupLayout(jFrame3.getContentPane());
-        jFrame3.getContentPane().setLayout(jFrame3Layout);
-        jFrame3Layout.setHorizontalGroup(
-            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame3Layout.createSequentialGroup()
-                .addGroup(jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jFrame3Layout.createSequentialGroup()
+        javax.swing.GroupLayout formValorLayout = new javax.swing.GroupLayout(formValor.getContentPane());
+        formValor.getContentPane().setLayout(formValorLayout);
+        formValorLayout.setHorizontalGroup(
+            formValorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formValorLayout.createSequentialGroup()
+                .addGroup(formValorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(formValorLayout.createSequentialGroup()
                         .addGap(135, 135, 135)
                         .addComponent(jLabel2))
-                    .addGroup(jFrame3Layout.createSequentialGroup()
+                    .addGroup(formValorLayout.createSequentialGroup()
                         .addGap(123, 123, 123)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jFrame3Layout.createSequentialGroup()
+                    .addGroup(formValorLayout.createSequentialGroup()
                         .addGap(134, 134, 134)
                         .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(146, Short.MAX_VALUE))
         );
-        jFrame3Layout.setVerticalGroup(
-            jFrame3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame3Layout.createSequentialGroup()
+        formValorLayout.setVerticalGroup(
+            formValorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(formValorLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
@@ -243,24 +248,24 @@ public class vistaCajero extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jFrame4Layout = new javax.swing.GroupLayout(jFrame4.getContentPane());
-        jFrame4.getContentPane().setLayout(jFrame4Layout);
-        jFrame4Layout.setHorizontalGroup(
-            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame4Layout.createSequentialGroup()
+        javax.swing.GroupLayout digiteClaveLayout = new javax.swing.GroupLayout(digiteClave.getContentPane());
+        digiteClave.getContentPane().setLayout(digiteClaveLayout);
+        digiteClaveLayout.setHorizontalGroup(
+            digiteClaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(digiteClaveLayout.createSequentialGroup()
                 .addGap(137, 137, 137)
-                .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(digiteClaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(digiteClaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel3)
-                        .addGroup(jFrame4Layout.createSequentialGroup()
+                        .addGroup(digiteClaveLayout.createSequentialGroup()
                             .addGap(10, 10, 10)
                             .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(141, Short.MAX_VALUE))
         );
-        jFrame4Layout.setVerticalGroup(
-            jFrame4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jFrame4Layout.createSequentialGroup()
+        digiteClaveLayout.setVerticalGroup(
+            digiteClaveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(digiteClaveLayout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -382,6 +387,41 @@ public class vistaCajero extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
+        jLabel7.setText("Cuenta de destino");
+
+        jButton16.setText("Continuar");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout cuentaDestinoLayout = new javax.swing.GroupLayout(cuentaDestino.getContentPane());
+        cuentaDestino.getContentPane().setLayout(cuentaDestinoLayout);
+        cuentaDestinoLayout.setHorizontalGroup(
+            cuentaDestinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cuentaDestinoLayout.createSequentialGroup()
+                .addGap(118, 118, 118)
+                .addGroup(cuentaDestinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(139, Short.MAX_VALUE))
+        );
+        cuentaDestinoLayout.setVerticalGroup(
+            cuentaDestinoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cuentaDestinoLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(123, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 460, 460));
 
@@ -452,29 +492,32 @@ public class vistaCajero extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        if(numTransaccion == 0){
+            tiposTransaccion.add(new transaccion(1, "Retiro"));
+            tiposTransaccion.add(new transaccion(2, "Consulta De Saldo"));
+            tiposTransaccion.add(new transaccion(3, "Consignación"));
+            tiposTransaccion.add(new transaccion(4, "Transferencia"));
+            tiposTransaccion.add(new transaccion(5, "Movimientos"));
+        
+            tiposCuenta.add(new tipoCuenta(1, "Ahorros"));
+            tiposCuenta.add(new tipoCuenta(2, "Corriente"));
+        
+            tarjetas.add(new tarjeta(1, "Visa"));
+            tarjetas.add(new tarjeta(1, "Mastercard"));
+            tarjetas.add(new tarjeta(1, "Maestro"));
+        
+            cuentas.add(new cuenta(1, 1, 1, 500000, 1234));
+            cuentas.add(new cuenta(2, 1, 2, 1500000, 1234));
+            cuentas.add(new cuenta(3, 2, 3, 5200000, 1234));
+            cuentas.add(new cuenta(4, 2, 1, 50000, 1234));
+        }
+        
         numTarjeta = Integer.parseInt(jTextField1.getText());
         numTransaccion++;
         
-        tiposTransaccion.add(new transaccion(1, "Retiro"));
-        tiposTransaccion.add(new transaccion(2, "Consulta De Saldo"));
-        tiposTransaccion.add(new transaccion(3, "Consignación"));
-        tiposTransaccion.add(new transaccion(4, "Transferencia"));
-        tiposTransaccion.add(new transaccion(5, "Movimientos"));
-        
-        tiposCuenta.add(new tipoCuenta(1, "Ahorros"));
-        tiposCuenta.add(new tipoCuenta(2, "Corriente"));
-        
-        tarjetas.add(new tarjeta(1, "Visa"));
-        tarjetas.add(new tarjeta(1, "Mastercard"));
-        tarjetas.add(new tarjeta(1, "Maestro"));
-        
-        cuentas.add(new cuenta(1, 1, 1, 500000, 1234));
-        cuentas.add(new cuenta(2, 1, 2, 1500000, 1234));
-        cuentas.add(new cuenta(3, 2, 3, 5200000, 1234));
-        cuentas.add(new cuenta(4, 2, 1, 50000, 1234));
-        
-        jFrame1.setVisible(true);
-        jFrame1.setBounds(0, 0, 460, 430);
+        ahorrosCorriente.setVisible(true);
+        ahorrosCorriente.setBounds(0, 0, 460, 430);
         /*jFrame1.setLayout(new GridLayout(2,1));
         jFrame1.add(new JButton("Ahorros"));
         jFrame1.add(new JButton("Corriente"));*/
@@ -483,48 +526,51 @@ public class vistaCajero extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         tipoTarjeta = 1;
-        jFrame1.setVisible(false);
-        jFrame2.setVisible(true);
-        jFrame2.setBounds(0, 0, 460, 430);
+        ahorrosCorriente.setVisible(false);
+        formTransacciones.setVisible(true);
+        formTransacciones.setBounds(0, 0, 460, 430);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         tipoTarjeta = 2;
-        jFrame1.setVisible(false);
-        jFrame2.setVisible(true);
-        jFrame2.setBounds(0, 0, 460, 430);
+        ahorrosCorriente.setVisible(false);
+        formTransacciones.setVisible(true);
+        formTransacciones.setBounds(0, 0, 460, 430);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         tipoTransaccion = 1;
-        jFrame2.setVisible(false);
-        jFrame3.setVisible(true);
-        jFrame3.setBounds(0, 0, 460, 430);
+        formTransacciones.setVisible(false);
+        formValor.setVisible(true);
+        formValor.setBounds(0, 0, 460, 430);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         tipoTransaccion = 2;
-        jFrame2.setVisible(false);
+        formTransacciones.setVisible(false);
         valorRetiro = 0;
-        jFrame4.setVisible(true);
-        jFrame4.setBounds(0, 0, 460, 430);
+        digiteClave.setVisible(true);
+        digiteClave.setBounds(0, 0, 460, 430);
         
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         tipoTransaccion = 3;
-        jFrame2.setVisible(false);
-        jFrame3.setVisible(true);
-        jFrame3.setBounds(0, 0, 460, 430);
+        formTransacciones.setVisible(false);
+        formValor.setVisible(true);
+        formValor.setBounds(0, 0, 460, 430);
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         tipoTransaccion = 4;
+        formTransacciones.setVisible(false);
+        formValor.setVisible(true);
+        formValor.setBounds(0, 0, 460, 430);
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -539,17 +585,22 @@ public class vistaCajero extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        jFrame1.setVisible(false);
+        ahorrosCorriente.setVisible(false);
         jTextField1.setText(null);
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
         valorRetiro = Integer.parseInt(jTextField2.getText());
-        jFrame3.setVisible(false);
-        jFrame4.setVisible(true);
-        jFrame4.setBounds(0, 0, 460, 430);
+        formValor.setVisible(false);
         
+        if(tipoTransaccion == 4){
+            cuentaDestino.setVisible(true);
+            cuentaDestino.setBounds(0, 0, 460, 430);
+        }else{
+            digiteClave.setVisible(true);
+            digiteClave.setBounds(0, 0, 460, 430);
+        }   
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
@@ -568,27 +619,97 @@ public class vistaCajero extends javax.swing.JFrame {
         
         for(j=0;j<cuentas.size();j++){
             if(cuentas.get(j).getClave() == parseado && cuentas.get(j).getIdCuenta() == numTarjeta){
-                if(cuentas.get(j).getSaldo()>valorRetiro){
-                    nuevoSaldo = cuentas.get(j).getSaldo() - valorRetiro;
-                    cuentas.get(j).setSaldo(nuevoSaldo);
-                    System.out.println(cuentas.get(j).getSaldo());
-                    transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
-                    j = cuentas.size();
-                    jFrame4.setVisible(false);
-                    reporteTransaccion.setBounds(0, 0, 460, 430);
-                    reporteTransaccion.setVisible(true);
-                    cadena = generarRecibo(valorRetiro,nuevoSaldo,numTarjeta,numTransaccion);
-                    jTextArea1.setText(cadena);
-                }else{
-                    //Saldo insuficiente
-                    jFrame4.setVisible(false);
-                    fondosInsuficientes.setBounds(0, 0, 460, 430);
-                    fondosInsuficientes.setVisible(true);
-                    j = cuentas.size();
+                switch(tipoTransaccion){
+                    case 1:{
+                        if(cuentas.get(j).getSaldo()>valorRetiro){
+                            nuevoSaldo = cuentas.get(j).getSaldo() - valorRetiro;
+                            cuentas.get(j).setSaldo(nuevoSaldo);
+                            System.out.println(cuentas.get(j).getSaldo());
+                            transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
+                            j = cuentas.size();
+                            digiteClave.setVisible(false);
+                            reporteTransaccion.setBounds(0, 0, 460, 430);
+                            reporteTransaccion.setVisible(true);
+                            cadena = generarRecibo(valorRetiro,nuevoSaldo,numTarjeta,numTransaccion);
+                            jTextArea1.setText(cadena);
+                        }else{
+                            //Saldo insuficiente
+                            digiteClave.setVisible(false);
+                            fondosInsuficientes.setBounds(0, 0, 460, 430);
+                            fondosInsuficientes.setVisible(true);
+                            j = cuentas.size();
+                        }
+                        break;
+                    }
+                    case 2:{
+                        if(cuentas.get(j).getSaldo()>valorRetiro){
+                            nuevoSaldo = cuentas.get(j).getSaldo() - valorRetiro;
+                            cuentas.get(j).setSaldo(nuevoSaldo);
+                            System.out.println(cuentas.get(j).getSaldo());
+                            transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
+                            j = cuentas.size();
+                            digiteClave.setVisible(false);
+                            reporteTransaccion.setBounds(0, 0, 460, 430);
+                            reporteTransaccion.setVisible(true);
+                            cadena = generarRecibo(valorRetiro,nuevoSaldo,numTarjeta,numTransaccion);
+                            jTextArea1.setText(cadena);
+                        }
+                        break;
+                    }
+                    case 3:{
+                        nuevoSaldo = cuentas.get(j).getSaldo() + valorRetiro;
+                        cuentas.get(j).setSaldo(nuevoSaldo);
+                        System.out.println(cuentas.get(j).getSaldo());
+                        transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
+                        j = cuentas.size();
+                        digiteClave.setVisible(false);
+                        reporteTransaccion.setBounds(0, 0, 460, 430);
+                        reporteTransaccion.setVisible(true);
+                        cadena = generarRecibo(valorRetiro,nuevoSaldo,numTarjeta,numTransaccion);
+                        jTextArea1.setText(cadena);
+                        break;
+                    }
+                    case 4:{
+                        if(cuentas.get(j).getSaldo()>valorRetiro){
+                            for(int k = 0; k < cuentas.size(); k++){
+                                if(cuentas.get(k).idTarjeta == cuentaTransferencia){
+                                    nuevoSaldo = cuentas.get(j).getSaldo() - valorRetiro;
+                                    cuentas.get(j).setSaldo(nuevoSaldo);
+                                    System.out.println(cuentas.get(j).getSaldo());
+                                    transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
+                                    j = cuentas.size();
+                                    cadena = generarRecibo(valorRetiro,nuevoSaldo,numTarjeta,numTransaccion);
+                                    jTextArea1.setText(cadena);
+                                    numTransaccion++;
+                                    
+                                    nuevoSaldo = cuentas.get(k).getSaldo() + valorRetiro;
+                                    cuentas.get(k).setSaldo(nuevoSaldo);
+                                    System.out.println(cuentas.get(k).getSaldo());
+                                    transacciones.add(new cuentaTransaccion(tipoTransaccion, cuentaTransferencia, numTransaccion, nuevoSaldo));
+                                    
+                                    digiteClave.setVisible(false);
+                                    reporteTransaccion.setBounds(0, 0, 460, 430);
+                                    reporteTransaccion.setVisible(true);                                   
+                                }else{
+                                    
+                                }
+                            }
+                        }else{
+                            //Saldo insuficiente
+                            digiteClave.setVisible(false);
+                            fondosInsuficientes.setBounds(0, 0, 460, 430);
+                            fondosInsuficientes.setVisible(true);
+                            j = cuentas.size();
+                        }
+                        break;
+                    }
+                    case 5:{
+                        
+                    }
                 }
             }else{
                 //Clave invalida
-                jFrame4.setVisible(false);
+                digiteClave.setVisible(false);
                 claveInvalida.setBounds(0, 0, 460, 430);
                 claveInvalida.setVisible(true);
             }
@@ -612,6 +733,14 @@ public class vistaCajero extends javax.swing.JFrame {
         reporteTransaccion.setVisible(false);
         jTextField1.setText(null);
     }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        cuentaTransferencia = Integer.parseInt(jTextField3.getText());
+        cuentaDestino.setVisible(false);
+        digiteClave.setVisible(true);
+        digiteClave.setBounds(0, 0, 460, 430);
+    }//GEN-LAST:event_jButton16ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -649,8 +778,13 @@ public class vistaCajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame ahorrosCorriente;
     private javax.swing.JFrame claveInvalida;
+    private javax.swing.JFrame cuentaDestino;
+    private javax.swing.JFrame digiteClave;
     private javax.swing.JFrame fondosInsuficientes;
+    private javax.swing.JFrame formTransacciones;
+    private javax.swing.JFrame formValor;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -658,6 +792,7 @@ public class vistaCajero extends javax.swing.JFrame {
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -666,21 +801,19 @@ public class vistaCajero extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JFrame jFrame1;
-    private javax.swing.JFrame jFrame2;
-    private javax.swing.JFrame jFrame3;
-    private javax.swing.JFrame jFrame4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JFrame reporteTransaccion;
     // End of variables declaration//GEN-END:variables
 
