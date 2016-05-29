@@ -12,20 +12,20 @@ public class cuentaTransaccion {
     int idTipoTransaccion;
     int idCuenta;
     int idTransaccion;
-    int valor;
+    int valorTransaccion;
     
     cuentaTransaccion(){
         idTipoTransaccion = 0;
         idCuenta = 0;
         idTransaccion = 0;
-        valor = 0;
+        valorTransaccion = 0;
     }
     
     cuentaTransaccion(int nuevoIdTipoTransaccion, int nuevoIdCuenta, int nuevoIdTransaccion, int nuevoValor){
         idTipoTransaccion = nuevoIdTipoTransaccion;
         idCuenta = nuevoIdCuenta;
         idTipoTransaccion = nuevoIdTransaccion;
-        valor = nuevoValor;
+        valorTransaccion = nuevoValor;
     }
     
     int getIdTipoTransaccion(){
@@ -41,7 +41,7 @@ public class cuentaTransaccion {
     }
     
     int getValor(){
-        return valor;
+        return valorTransaccion;
     }
     
     void setIdTipoTransaccion(int nuevoIdTipoTransaccion){
@@ -57,6 +57,6 @@ public class cuentaTransaccion {
     }
     
     void setValor(int nuevoValor){
-        valor = nuevoValor;
+        valorTransaccion = nuevoValor;
     }
 }

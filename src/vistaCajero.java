@@ -576,6 +576,9 @@ public class vistaCajero extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
         tipoTransaccion = 5;
+        formTransacciones.setVisible(false);
+        digiteClave.setVisible(true);
+        digiteClave.setBounds(0, 0, 460, 430);
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -625,7 +628,7 @@ public class vistaCajero extends javax.swing.JFrame {
                             nuevoSaldo = cuentas.get(j).getSaldo() - valorRetiro;
                             cuentas.get(j).setSaldo(nuevoSaldo);
                             System.out.println(cuentas.get(j).getSaldo());
-                            transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
+                            transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, valorRetiro));
                             j = cuentas.size();
                             digiteClave.setVisible(false);
                             reporteTransaccion.setBounds(0, 0, 460, 430);
@@ -646,7 +649,7 @@ public class vistaCajero extends javax.swing.JFrame {
                             nuevoSaldo = cuentas.get(j).getSaldo() - valorRetiro;
                             cuentas.get(j).setSaldo(nuevoSaldo);
                             System.out.println(cuentas.get(j).getSaldo());
-                            transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
+                            transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, valorRetiro));
                             j = cuentas.size();
                             digiteClave.setVisible(false);
                             reporteTransaccion.setBounds(0, 0, 460, 430);
@@ -660,7 +663,7 @@ public class vistaCajero extends javax.swing.JFrame {
                         nuevoSaldo = cuentas.get(j).getSaldo() + valorRetiro;
                         cuentas.get(j).setSaldo(nuevoSaldo);
                         System.out.println(cuentas.get(j).getSaldo());
-                        transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
+                        transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, valorRetiro));
                         j = cuentas.size();
                         digiteClave.setVisible(false);
                         reporteTransaccion.setBounds(0, 0, 460, 430);
@@ -676,7 +679,7 @@ public class vistaCajero extends javax.swing.JFrame {
                                     nuevoSaldo = cuentas.get(j).getSaldo() - valorRetiro;
                                     cuentas.get(j).setSaldo(nuevoSaldo);
                                     System.out.println(cuentas.get(j).getSaldo());
-                                    transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, nuevoSaldo));
+                                    transacciones.add(new cuentaTransaccion(tipoTransaccion, numTarjeta, numTransaccion, valorRetiro));
                                     j = cuentas.size();
                                     cadena = generarRecibo(valorRetiro,nuevoSaldo,numTarjeta,numTransaccion);
                                     jTextArea1.setText(cadena);
@@ -685,7 +688,7 @@ public class vistaCajero extends javax.swing.JFrame {
                                     nuevoSaldo = cuentas.get(k).getSaldo() + valorRetiro;
                                     cuentas.get(k).setSaldo(nuevoSaldo);
                                     System.out.println(cuentas.get(k).getSaldo());
-                                    transacciones.add(new cuentaTransaccion(tipoTransaccion, cuentaTransferencia, numTransaccion, nuevoSaldo));
+                                    transacciones.add(new cuentaTransaccion(tipoTransaccion, cuentaTransferencia, numTransaccion, valorRetiro));
                                     
                                     digiteClave.setVisible(false);
                                     reporteTransaccion.setBounds(0, 0, 460, 430);
@@ -704,7 +707,12 @@ public class vistaCajero extends javax.swing.JFrame {
                         break;
                     }
                     case 5:{
-                        
+                        cadena = generarMovimientos(numTarjeta, numTransaccion);
+                        reporteTransaccion.setBounds(0, 0, 460, 430);
+                        reporteTransaccion.setVisible(true);
+                        jTextArea1.setText(cadena);
+                        j = cuentas.size();
+                        break;
                     }
                 }
             }else{
@@ -826,5 +834,25 @@ public class vistaCajero extends javax.swing.JFrame {
         cadena = cadena + "Hora: " + getFecha.get(Calendar.HOUR) + ":" + getFecha.get(Calendar.MINUTE) + ":" + getFecha.get(Calendar.SECOND) + "\n";
         cadena = cadena + "Numero de transaccion: " + numTransaccion + "\n" + "Numero de cuenta: " + numTarjeta + "\n" + "Valor de la transaccion: " + valorTransaccion + "\n" + "Nuevo saldo: " + nuevoSaldo;
         return cadena;
+    }
+    
+    String generarMovimientos(int numTarjeta,int numTransaccion ){
+        String cadena = "";
+        GregorianCalendar getFecha = new GregorianCalendar();
+        GregorianCalendar getHora = new GregorianCalendar();
+        
+        cadena = "Fecha: " + getFecha.get(Calendar.DATE) + "/" + getFecha.get(Calendar.MONTH) + "/" + getFecha.get(Calendar.YEAR) + "\n";
+        cadena = cadena + "Hora: " + getFecha.get(Calendar.HOUR) + ":" + getFecha.get(Calendar.MINUTE) + ":" + getFecha.get(Calendar.SECOND) + "\n";
+        cadena = cadena + "Numero de transaccion: " + numTransaccion + "\n" + "Numero de cuenta: " + numTarjeta + "\n \n";
+        cadena = cadena + "Tipo transacción" + "\t" + "Valor" + "\n";
+        
+        for(int i = 0; i < transacciones.size(); i++){
+            if(numTarjeta == transacciones.get(i).idCuenta){
+                cadena = cadena + transacciones.get(i).idTipoTransaccion + "\t" + transacciones.get(i).valorTransaccion + "\n";
+            }
+        }
+        return cadena;
+        
+        
     }
 }
