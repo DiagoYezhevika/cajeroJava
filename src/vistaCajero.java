@@ -277,7 +277,7 @@ public class vistaCajero extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel4.setText("Su Clave Es Invalida!!");
+        jLabel4.setText("Transaccion Invalida!!");
 
         jButton13.setText("Continuar");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -297,7 +297,7 @@ public class vistaCajero extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, claveInvalidaLayout.createSequentialGroup()
                         .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         claveInvalidaLayout.setVerticalGroup(
             claveInvalidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -313,7 +313,7 @@ public class vistaCajero extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 0, 0));
         jLabel5.setText("Fondos Insuficientes!!");
 
-        jButton14.setText("jButton14");
+        jButton14.setText("Continuar");
         jButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton14ActionPerformed(evt);
@@ -324,13 +324,11 @@ public class vistaCajero extends javax.swing.JFrame {
         fondosInsuficientes.getContentPane().setLayout(fondosInsuficientesLayout);
         fondosInsuficientesLayout.setHorizontalGroup(
             fondosInsuficientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondosInsuficientesLayout.createSequentialGroup()
+            .addGroup(fondosInsuficientesLayout.createSequentialGroup()
                 .addContainerGap(116, Short.MAX_VALUE)
-                .addGroup(fondosInsuficientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondosInsuficientesLayout.createSequentialGroup()
-                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)))
+                .addGroup(fondosInsuficientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel5)
+                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(110, 110, 110))
         );
         fondosInsuficientesLayout.setVerticalGroup(
@@ -621,7 +619,7 @@ public class vistaCajero extends javax.swing.JFrame {
         System.out.println(parseado);
         
         for(j=0;j<cuentas.size();j++){
-            if(cuentas.get(j).getClave() == parseado && cuentas.get(j).getIdCuenta() == numTarjeta){
+            if(cuentas.get(j).getClave() == parseado && cuentas.get(j).getIdCuenta() == numTarjeta && cuentas.get(j).getIdTipoCuenta() == tipoTarjeta){
                 switch(tipoTransaccion){
                     case 1:{
                         if(cuentas.get(j).getSaldo()>valorRetiro){
@@ -708,6 +706,7 @@ public class vistaCajero extends javax.swing.JFrame {
                     }
                     case 5:{
                         cadena = generarMovimientos(numTarjeta, numTransaccion);
+                        digiteClave.setVisible(false);
                         reporteTransaccion.setBounds(0, 0, 460, 430);
                         reporteTransaccion.setVisible(true);
                         jTextArea1.setText(cadena);
@@ -734,12 +733,18 @@ public class vistaCajero extends javax.swing.JFrame {
         // TODO add your handling code here:
         fondosInsuficientes.setVisible(false);
         jTextField1.setText(null);
+        jTextField2.setText(null);
+        jTextField3.setText(null);
+        jPasswordField1.setText(null);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
         reporteTransaccion.setVisible(false);
         jTextField1.setText(null);
+        jTextField2.setText(null);
+        jTextField3.setText(null);
+        jPasswordField1.setText(null);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
@@ -836,21 +841,41 @@ public class vistaCajero extends javax.swing.JFrame {
         return cadena;
     }
     
-    String generarMovimientos(int numTarjeta,int numTransaccion ){
-        String cadena = "";
+    String generarMovimientos(int numTarjeta,int numTransaccion){
+        String cadena = "",descripcionTransaccion="";
         GregorianCalendar getFecha = new GregorianCalendar();
         GregorianCalendar getHora = new GregorianCalendar();
+        int saldoActual=0,cantidadTransacciones = 0;
+        
+        for(int i = 0; i < cuentas.size(); i++){
+            if(cuentas.get(i).getIdCuenta() == numTarjeta){
+                saldoActual = cuentas.get(i).getSaldo();
+                i = cuentas.size();
+            }
+        }
         
         cadena = "Fecha: " + getFecha.get(Calendar.DATE) + "/" + getFecha.get(Calendar.MONTH) + "/" + getFecha.get(Calendar.YEAR) + "\n";
         cadena = cadena + "Hora: " + getFecha.get(Calendar.HOUR) + ":" + getFecha.get(Calendar.MINUTE) + ":" + getFecha.get(Calendar.SECOND) + "\n";
-        cadena = cadena + "Numero de transaccion: " + numTransaccion + "\n" + "Numero de cuenta: " + numTarjeta + "\n \n";
+        cadena = cadena + "Numero de transaccion: " + numTransaccion + "\n" + "Numero de cuenta: " + numTarjeta + "\n" + "Saldo actual: " + saldoActual  + "\n \n";
         cadena = cadena + "Tipo transacción" + "\t" + "Valor" + "\n";
         
         for(int i = 0; i < transacciones.size(); i++){
             if(numTarjeta == transacciones.get(i).idCuenta){
-                cadena = cadena + transacciones.get(i).idTipoTransaccion + "\t" + transacciones.get(i).valorTransaccion + "\n";
+                for(int j=0; j < tiposTransaccion.size(); j++){
+                    if(transacciones.get(i).idTipoTransaccion == tiposTransaccion.get(j).getIdTipo()){
+                        descripcionTransaccion = tiposTransaccion.get(j).getDescripcion();
+                        j = tiposTransaccion.size();
+                    }
+                }
+                cadena = cadena + descripcionTransaccion + "\t" + transacciones.get(i).valorTransaccion + "\n";
+                cantidadTransacciones++;
             }
         }
+        
+        if(cantidadTransacciones == 0){
+            cadena = cadena + "No tiene historial de transacciones";
+        }
+        
         return cadena;
         
         
